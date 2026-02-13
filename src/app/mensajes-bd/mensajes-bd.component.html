@@ -1,0 +1,18 @@
+<div class="form-bd-container">
+  <div class="form-card">
+    <h2>📥 Registro Directo</h2>
+    <p>Ingresa tu mensaje.</p>
+    
+    <div class="input-group">
+      <input 
+        type="text" 
+        [(ngModel)]="nuevoContenido" 
+        placeholder="Escribe tu mensaje (ej: gato)..." 
+        class="input-sql"
+      >
+      <button (click)="guardarEnBD()" class="btn-enviar-sql">
+        Guardar 
+      </button>
+    </div>
+  </div>
+</div>

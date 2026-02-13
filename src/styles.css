@@ -1,0 +1,43 @@
+:root {
+  --midnight: #0f172a;
+  --gold: #d4af37;
+  --pearl: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top right, #1e293b, #0f172a);
+  background-attachment: fixed;
+  min-height: 100vh;
+  color: white;
+}
+
+/* Barra de Navegación */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 10%;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo { font-size: 1.5rem; color: var(--gold); text-decoration: none; font-weight: 800; }
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.form-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  color: #1e293b;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}

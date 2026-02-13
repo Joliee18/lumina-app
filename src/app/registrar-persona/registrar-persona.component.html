@@ -1,0 +1,183 @@
+<div class="registration-container">
+  <div class="main-wrapper">
+    <div class="form-card">
+      <div class="form-header">
+        <h1 class="form-title">Registro Completo</h1>
+        <p class="form-subtitle">Ingresa tus datos para la evaluación del modelo.</p>
+      </div>
+
+      <form #regForm="ngForm">
+        <!-- NOMBRE COMPLETO -->
+        <div class="input-group">
+          <label class="input-label">Nombre Completo *</label>
+          <input 
+            type="text" 
+            name="nombre" 
+            [(ngModel)]="persona.nombre" 
+            #nombre="ngModel"
+            required 
+            class="input-field" 
+            placeholder="Ej. Alejandra Silva"
+            (input)="validateField('nombre', persona.nombre)"
+            (focus)="onFieldFocus('nombre')"
+            [class.invalid]="errors.nombre.hasError"
+          >
+          <div class="error-message" *ngIf="errors.nombre.hasError && persona.nombre">
+            {{ errors.nombre.message }}
+          </div>
+          <div class="error-message" *ngIf="nombre.invalid && nombre.touched && !persona.nombre">
+            El nombre es requerido
+          </div>
+        </div>
+
+        <!-- CORREO Y EDAD -->
+        <div class="grid-row">
+          <div class="input-group">
+            <label class="input-label">Correo Electrónico *</label>
+            <input 
+              type="email" 
+              name="correo" 
+              [(ngModel)]="persona.correo" 
+              #correo="ngModel"
+              required 
+              class="input-field" 
+              placeholder="usuario@mail.com"
+              (input)="validateField('correo', persona.correo)"
+              (focus)="onFieldFocus('correo')"
+              [class.invalid]="errors.correo.hasError"
+            >
+            <div class="error-message" *ngIf="errors.correo.hasError && persona.correo">
+              {{ errors.correo.message }}
+            </div>
+            <div class="error-message" *ngIf="correo.invalid && correo.touched && !persona.correo">
+              El correo es requerido
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label">Edad *</label>
+            <input 
+              type="number" 
+              name="edad" 
+              [(ngModel)]="persona.edad" 
+              #edad="ngModel"
+              required 
+              min="18" 
+              max="99" 
+              class="input-field" 
+              placeholder="18+"
+              (input)="validateField('edad', persona.edad)"
+              (focus)="onFieldFocus('edad')"
+              [class.invalid]="errors.edad.hasError"
+            >
+            <div class="error-message" *ngIf="errors.edad.hasError && persona.edad">
+              {{ errors.edad.message }}
+            </div>
+            <div class="error-message" *ngIf="edad.invalid && edad.touched && !persona.edad">
+              La edad es requerida
+            </div>
+          </div>
+        </div>
+
+        <!-- TELÉFONO -->
+        <div class="input-group">
+          <label class="input-label">Número Telefónico (10 dígitos) *</label>
+          <input 
+            type="tel" 
+            name="tel" 
+            [(ngModel)]="persona.tel" 
+            #tel="ngModel"
+            required 
+            maxlength="10" 
+            class="input-field" 
+            placeholder="5512345678"
+            (input)="validateField('tel', persona.tel)"
+            (focus)="onFieldFocus('tel')"
+            [class.invalid]="errors.tel.hasError"
+          >
+          <div class="error-message" *ngIf="errors.tel.hasError && persona.tel">
+            {{ errors.tel.message }}
+          </div>
+          <div class="error-message" *ngIf="tel.invalid && tel.touched && !persona.tel">
+            El teléfono es requerido
+          </div>
+        </div>
+
+        <!-- CONTRASEÑA Y CONFIRMACIÓN -->
+        <div class="grid-row">
+          <div class="input-group">
+            <label class="input-label">Contraseña (min. 8) *</label>
+            <input 
+              type="password" 
+              name="pass" 
+              [(ngModel)]="persona.pass" 
+              #pass="ngModel"
+              required 
+              minlength="8" 
+              class="input-field"
+              (input)="validateField('pass', persona.pass)"
+              (focus)="onFieldFocus('pass')"
+              [class.invalid]="errors.pass.hasError"
+            >
+            <div class="error-message" *ngIf="errors.pass.hasError && persona.pass">
+              {{ errors.pass.message }}
+            </div>
+            <div class="error-message" *ngIf="pass.invalid && pass.touched && !persona.pass">
+              La contraseña es requerida
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label class="input-label">Confirmar *</label>
+            <input 
+              type="password" 
+              name="cpass" 
+              [(ngModel)]="persona.cpass" 
+              #cpass="ngModel"
+              required 
+              class="input-field"
+              (input)="validateField('cpass', persona.cpass)"
+              (focus)="onFieldFocus('cpass')"
+              [class.invalid]="errors.cpass.hasError"
+            >
+            <div class="error-message" *ngIf="errors.cpass.hasError && persona.cpass">
+              {{ errors.cpass.message }}
+            </div>
+            <div class="error-message" *ngIf="cpass.invalid && cpass.touched && !persona.cpass">
+              Debes confirmar la contraseña
+            </div>
+          </div>
+        </div>
+
+        <!-- CAPTCHA -->
+        <div class="captcha-section">
+          <div class="captcha-box" [class.valid]="captchaCheck">
+            <div class="captcha-flex">
+              <label class="check-item">
+                <input type="checkbox" (change)="onCaptchaChange($event)">
+                <span class="custom-check"></span>
+                <p>No soy un robot</p>
+              </label>
+              <div class="captcha-brand">
+                <img src="https://www.gstatic.com/recaptcha/api2/logo_48.png" alt="reCAPTCHA">
+                <span>reCAPTCHA</span>
+                <small>Privacidad - Condiciones</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BOTÓN DE ENVÍO -->
+        <button 
+          type="button" 
+          class="btn-submit" 
+          [disabled]="!isFormReady()" 
+          (click)="finalizarRegistro()"
+          [class.disabled]="!isFormReady()"
+        >
+          Finalizar Registro
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

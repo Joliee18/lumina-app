@@ -1,0 +1,151 @@
+.dashboard-container {
+  min-height: 100vh;
+  background: #0f172a; /* Midnight profundo */
+  color: #f1f5f9;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Navbar superior */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo { font-size: 1.4rem; font-weight: 800; color: #d4af37; text-decoration: none; }
+
+/* Wrapper principal con Sidebar */
+.dashboard-wrapper {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 70px);
+}
+
+/* Sidebar Estilo Premium */
+.sidebar {
+  background: #1e293b;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  font-size: 3rem;
+  background: rgba(212, 175, 55, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #d4af37;
+}
+
+.user-info h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+.user-role { color: #d4af37; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
+.user-email { color: #94a3b8; font-size: 0.75rem; }
+
+/* Menú Lateral */
+.side-menu { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.menu-item:hover, .menu-item.active {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+}
+
+/* Grid de Tarjetas (Cards) */
+.main-content { padding: 2.5rem; background: #0f172a; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: 0.3s;
+}
+
+.card:hover { transform: translateY(-5px); border-color: #d4af37; }
+
+.card-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #d4af37;
+  margin: 0.5rem 0;
+}
+
+/* Sección de Actividad */
+.activity-section {
+  background: #1e293b;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.activity-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.activity-text { font-size: 0.95rem; margin-bottom: 0.2rem; }
+.activity-time { color: #64748b; font-size: 0.8rem; }
+
+/* Botones de Acción Rápida */
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.action-button {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-button:hover {
+  background: #d4af37;
+  color: #0f172a;
+}

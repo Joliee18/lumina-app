@@ -1,0 +1,265 @@
+<div class="dashboard-container">
+
+  <div class="dashboard-wrapper">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+      <div class="user-profile">
+
+        <div class="avatar">
+
+          <span>👤</span>
+
+        </div>
+
+        <div class="user-info">
+
+          <h3>{{ usuario.nombre }}</h3>
+
+          <p class="user-role">{{ usuario.rol }}</p>
+
+          <p class="user-email">{{ usuario.email }}</p>
+
+        </div>
+
+      </div>
+
+
+
+      <nav class="side-menu">
+
+        <a href="#" class="menu-item active">
+
+          <span class="menu-icon">📊</span>
+
+          <span class="menu-text">Dashboard</span>
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+          <span class="menu-icon">👥</span>
+
+          <span class="menu-text">Personas</span>
+
+          <span class="menu-badge">12</span>
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+          <span class="menu-icon">📋</span>
+
+          <span class="menu-text">Registros</span>
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+          <span class="menu-icon">⚙️</span>
+
+          <span class="menu-text">Configuración</span>
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+          <span class="menu-icon">📈</span>
+
+          <span class="menu-text">Reportes</span>
+
+        </a>
+
+        <a href="#" class="menu-item">
+
+          <span class="menu-icon">🛡️</span>
+
+          <span class="menu-text">Seguridad</span>
+
+        </a>
+
+      </nav>
+
+
+
+      <div class="sidebar-footer">
+
+        <div class="date-display">
+
+          <span class="date-icon">📅</span>
+
+          <span class="date-text">{{ fechaActual }}</span>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+      <header class="content-header">
+
+        <h1 class="page-title">{{ titulo }}</h1>
+
+        <p class="page-description">{{ descripcion }}</p>
+
+      </header>
+
+
+
+      <!-- Cards Grid -->
+
+      <div class="cards-grid">
+
+        <div class="card">
+
+          <div class="card-header">
+
+            <span class="card-icon">👥</span>
+
+            <h3 class="card-title">Total de Personas</h3>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-number">154</p>
+
+            <p class="card-subtitle">Registradas en el sistema</p>
+
+          </div>
+
+          <div class="card-footer">
+
+            <a href="#" class="card-link">Ver todas →</a>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="card-header">
+
+            <span class="card-icon">✅</span>
+
+            <h3 class="card-title">Activas</h3>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-number">142</p>
+
+            <p class="card-subtitle">Usuarios activos</p>
+
+          </div>
+
+          <div class="card-footer">
+
+            <span class="card-trend positive">+12%</span>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="card-header">
+
+            <span class="card-icon">📝</span>
+
+            <h3 class="card-title">Nuevos Registros</h3>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-number">8</p>
+
+            <p class="card-subtitle">Última semana</p>
+
+          </div>
+
+          <div class="card-footer">
+
+            <a href="#" class="card-link">Revisar →</a>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+          <div class="card-header">
+
+            <span class="card-icon">⏰</span>
+
+            <h3 class="card-title">Pendientes</h3>
+
+          </div>
+
+          <div class="card-body">
+
+            <p class="card-number">5</p>
+
+            <p class="card-subtitle">Por verificar</p>
+
+          </div>
+
+          <div class="card-footer">
+
+            <button class="card-button" (click)="mostrarMensaje()">Verificar</button>
+
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Quick Actions -->
+      <div class="quick-actions">
+
+        <h2>Acciones Rápidas</h2>
+
+        <div class="actions-grid">
+
+          <button class="action-button" routerLink="/registrar-persona">
+
+            <span class="action-icon">➕</span>
+
+            <span class="action-text">Nuevo Registro</span>
+
+          </button>
+
+          <button class="action-button">
+
+            <span class="action-icon">📤</span>
+
+            <span class="action-text">Exportar Datos</span>
+
+          </button>
+
+          <button class="action-button">
+
+            <span class="action-icon">📊</span>
+
+            <span class="action-text">Generar Reporte</span>
+
+          </button>
+
+          <button class="action-button">
+
+            <span class="action-icon">🔄</span>

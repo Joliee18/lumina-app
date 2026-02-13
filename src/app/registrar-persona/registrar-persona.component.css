@@ -1,0 +1,243 @@
+/* Contenedor Base con fondo Midnight */
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: radial-gradient(circle at top right, #1e293b, #0f172a);
+  color: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Barra de Navegación Estilo Cristal */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8%;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #d4af37; /* Dorado */
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-item {
+  color: #94a3b8;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-item.active, .nav-item:hover {
+  color: #d4af37;
+}
+
+/* Centrado del Formulario */
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Ocupa el espacio restante bajo la navbar */
+  padding: 40px 20px;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 550px;
+  color: #1e293b;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid de dos campos */
+.grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.input-group { margin-bottom: 1.2rem; }
+
+.input-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.input-field:focus {
+  border-color: #d4af37;
+  outline: none;
+}
+
+/* Botón Dorado */
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-submit:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+.captcha-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.captcha-box {
+  background: #f9f9f9;
+  border: 1px solid #d3d3d3;
+  border-radius: 3px;
+  width: 300px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.captcha-box.valid {
+  border-left: 4px solid #d4af37; /* Color dorado de tu proyecto */
+}
+
+.captcha-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.captcha-brand {
+  text-align: center;
+  color: #777;
+  font-size: 10px;
+}
+
+.captcha-brand img { width: 28px; display: block; margin: 0 auto; }
+
+/* Estilos para validación */
+
+/* Campo inválido */
+.input-field.invalid {
+  border-color: #ef4444 !important;
+  background-color: rgba(239, 68, 68, 0.05) !important;
+}
+
+/* Campo válido (opcional) */
+.input-field.valid {
+  border-color: #10b981 !important;
+}
+
+/* Mensajes de error */
+.error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  margin-left: 5px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Botón deshabilitado */
+.btn-submit.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #9ca3af !important;
+}
+
+.btn-submit.disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Indicador de progreso */
+.progress-indicator {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Efecto de enfoque mejorado */
+.input-field:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Grupo de entrada con ícono de estado */
+.input-group {
+  position: relative;
+}
+
+/* Estilos para campos requeridos */
+.input-label::after {
+  content: " *";
+  color: #ef4444;
+}
+
+/* Feedback visual para campos correctos */
+.input-field:not(.invalid):not(:placeholder-shown):valid {
+  border-color: #10b981;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2310b981'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 40px;
+}

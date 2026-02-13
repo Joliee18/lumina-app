@@ -1,0 +1,35 @@
+.form-bd-container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+}
+
+.form-card {
+  background: #c0cbdc;
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid #d4af37;
+  text-align: center;
+}
+
+.input-sql {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #d4af37;
+  background: #1e293b;
+  color: white;
+  margin-bottom: 15px;
+  width: 300px;
+}
+
+.btn-enviar-sql {
+  background: #d4af37;
+  color: #0f172a;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}

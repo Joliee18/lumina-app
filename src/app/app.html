@@ -1,0 +1,18 @@
+<nav class="navbar-premium">
+  <a routerLink="/inicio" class="nav-logo">💎 LÚMINA</a>
+  
+  <div class="nav-links">
+    <a routerLink="/inicio" class="nav-item" routerLinkActive="active">Inicio</a>
+    <a routerLink="/persona-principal" class="nav-item" routerLinkActive="active">Panel</a>
+    <a routerLink="/registrar-persona" class="nav-item" routerLinkActive="active">Registro</a>
+    <a routerLink="/mensajes-bd" class="nav-item" routerLinkActive="active">Formulario BD</a>
+    
+    <!-- Botón simple para probar error -->
+    <a routerLink="/pagina-error" class="nav-item error-test-btn">
+      <span class="error-test-icon">⚠️</span>
+      <span class="error-test-text">Error</span>
+    </a>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
