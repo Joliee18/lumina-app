@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://meljoliee.bsite.net/api'  // Tu dominio en producción
+  apiUrl: 'https://lumina-api.onrender.com/api'  // ← Tu backend en Render
 };
