@@ -10,7 +10,7 @@ COPY MiBackendApi/. MiBackendApi/
 WORKDIR /src/MiBackendApi
 RUN dotnet publish "MiBackendApi.csproj" -c Release -o /app/publish
 
-# Imagen final con .NET 9.0
+# Imagen final
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 COPY --from=build /app/publish .
